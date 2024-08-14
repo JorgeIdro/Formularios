@@ -1,0 +1,204 @@
+:root {
+    --negro: #000;
+    --blanco: #fff;
+    --gris: #6a6a6a;
+    --grisOscuro: #3c3c3c;
+}
+
+html {
+    font-size: 62.5%;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    color: var(--grisOscuro);
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+h1,
+h2 {
+    text-align: center;
+}
+
+p {
+    font-size: 2rem;
+}
+
+fieldset {
+    border: none;
+}
+
+/*código para quitar las flechas del input con tipo number*/
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    /*para chrome, safari, ...*/
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+    /*para firefox*/
+    appearance: textfield;
+    /*todos*/
+}
+
+.contenedor {
+    max-width: 65rem;
+    /* width: 85%; */
+    margin: 2rem auto;
+    background: transparent;
+    border: 1px solid var(--gris);
+    border-radius: 1rem;
+    backdrop-filter: blur(20px); /*para que el fondo sea borroso*/
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2); /*sombra del formulario*/
+    padding: 5rem;
+}
+
+.webp .background-image {
+    background-image: url(../img/playa.webp);
+}
+.webp-no .background-image{
+    background-image: url(../img/playa.jpg);
+}
+.background-image {
+    
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+/*Datos personales*/
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding-bottom: 1rem;
+}
+.campo__label{
+    align-content: center;
+}
+.campo__field {
+    border-radius: .5rem;
+    border: 1px solid var(--gris);
+}
+
+@media (min-width: 768px) {
+    .campo {
+        flex-direction: row;
+    }
+
+    .campo__label {
+        flex: 0 0 7rem;
+        text-align: end;
+    }
+
+    .campo__field {
+        flex: 1;
+    }
+}
+
+/*Genero*/
+.radio + label:before {
+	content: ""; /*para que aparezca el circulo*/
+	width: 2.6rem; /*ancho del circulo*/
+	height: 2.6rem; /*altura del circulo*/
+	margin: 1.2rem 0.8rem 0 0; /*para que el circulo baje*/
+	border: .2rem solid var(--gris);
+    border-radius: 50%;
+	background: var(--blanco);
+    float: left; /*el cuadro permanece a la izquierda*/
+}
+.radio:checked + label:before {
+	border-color: var(--grisOscuro) /*una vez checkeado aplica el color al cuadro*/
+}
+.radio:checked + label:after {
+    content: ""; /*para que el visto se vea*/
+    border: .8rem solid var(--grisOscuro); /*grosor y color del borde (visto)*/
+    border-radius: 50%;
+    width: 0; /*ancho del cuadro (visto)*/
+    height: 0; /*alto del cuadro (visto)*/
+    /*con esto se crea la forma de un visto*/
+    float: left; /*el visto se mantiene a la izquierda*/
+    margin: 1.7rem 0 0 -2.9rem; /*para que el visto este en el cuadro*/
+}
+
+.radio {
+	display: none; /*se elimina el checkbox predeterminado*/
+}
+
+
+.radio + label {
+    font-weight: 700;
+    line-height: 5rem; /*interlineado*/
+    color: var(--gris); 
+    cursor: pointer;
+}
+.radio:checked + label {
+    color: var(--grisOscuro) /*se aplica el color al texto una vez checkeado*/
+}
+
+
+
+/*viajar continentes*/
+.checkbox__botones {
+    display: flex;
+    flex-wrap: wrap;
+}
+.checkbox__boton {
+    width: 50%;
+}
+
+/*input type checkbox*/
+.checkbox + label:before {
+	content: ""; /*para que aparezca el cuadro*/
+	width: 2.6rem; /*ancho del cuadro*/
+	height: 2.6rem; /*altura del cuadro*/
+	margin: 1rem 0.8rem 0 0; /*para que el cuadro baje*/
+	border: .2rem solid var(--gris);
+	background: var(--blanco);
+    float: left; /*el cuadro permanece a la izquierda*/
+}
+.checkbox:checked + label:before {
+	border-color: var(--grisOscuro) /*una vez checkeado aplica el color al cuadro*/
+}
+
+
+
+.checkbox:checked + label:after {
+    content: ""; /*para que el visto se vea*/
+    border: .4rem solid var(--grisOscuro); /*grosor y color del borde (visto)*/
+    width: 2rem; /*ancho del cuadro (visto)*/
+    height: .7rem; /*alto del cuadro (visto)*/
+    border-right: 0; /*se borra el borde derecho*/
+    border-top: 0; /*se borra el borde de arriba*/
+    /*con esto se crea la forma de un visto*/
+    float: left; /*el visto se mantiene a la izquierda*/
+    margin: 1.8rem 0 0 -3.12rem; /*para que el visto este en el cuadro*/
+    transform: rotate(-55deg); /*rota el visto*/
+}
+
+.checkbox {
+	display: none; /*se elimina el checkbox predeterminado*/
+}
+
+
+.checkbox + label {
+    font-weight: 700;
+    line-height: 5rem; /*interlineado*/
+    color: var(--gris); 
+    cursor: pointer;
+}
+.checkbox:checked + label {
+    color: var(--grisOscuro) /*se aplica el color al texto una vez checkeado*/
+}
+
