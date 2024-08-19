@@ -63,17 +63,50 @@
             <fieldset>
                 <!-- <legend>Preferencias personales</legend> -->
                 <h2>¿Cual es tu tipo de viajero?</h2>
-                <div>
-                    <select>
-                        <option disabled selected>--elegir--</option>
-                        <option>Aventurero</option>
-                        <option>Fotógrafo</option>
-                        <option>Relajado</option>
-                        <option>Deportes de riesgo</option>
-                        <option>Fiestas y ocio nocturno</option>
-                        <option>Negocios</option>
-                    </select>
+                <div class="selectbox">
+                    <div class="select" id="select">
+                        <div class="select-contenido">
+                            <h2 class="select-contenido__titulo">Selecciona tu tipo de viajero</h2>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-down" width="24" height="24" viewBox="0 0 24 24" stroke-width="3" stroke="#000000" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M6 9l6 6l6 -6" />
+                          </svg>
+                    </div>
+                    <div class="select-opciones" id="opciones">
+                        <a href="#" class="select-opcion">
+                            <div class="select-opcion__contenido">
+                                <h3 class="select-contenido__titulo">Aventurero</h3>
+                            </div>
+                        </a>
+                        <a href="#" class="select-opcion">
+                            <div class="select-opcion__contenido">
+                                <h3 class="select-contenido__titulo">Fotógrafo</h3>
+                            </div>
+                        </a>
+                        <a href="#" class="select-opcion">
+                            <div class="select-opcion__contenido">
+                                <h3 class="select-contenido__titulo">Relajado</h3>
+                            </div>
+                        </a>
+                        <a href="#" class="select-opcion">
+                            <div class="select-opcion__contenido">
+                                <h3 class="select-contenido__titulo">Deportes de riesgo</h3>
+                            </div>
+                        </a>
+                        <a href="#" class="select-opcion">
+                            <div class="select-opcion__contenido">
+                                <h3 class="select-contenido__titulo">Fiestas y ocio nocturno</h3>
+                            </div>
+                        </a>
+                        <a href="#" class="select-opcion">
+                            <div class="select-opcion__contenido">
+                                <h3 class="select-contenido__titulo">Negocios</h3>
+                            </div>
+                        </a>
+                    </div>
                 </div>
+                <input type="hidden" name="viajero" id="tipoViajero" value="">
 
                 <h2>¿A que continente te gustaría viajar?</h2>
                 <div class="checkbox__botones">
@@ -115,6 +148,7 @@
         </form>
     </div>
     <script src="js/modernizr.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>

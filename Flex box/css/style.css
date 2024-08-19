@@ -13,7 +13,7 @@ html {
 body {
     font-size: 16px;
     font-family: "Poppins", sans-serif;
-    color: var(--grisOscuro);
+    color: var(--negro);
 }
 
 *,
@@ -57,17 +57,17 @@ input[type=number] {
     background: transparent;
     border: 1px solid var(--gris);
     border-radius: 1rem;
-    backdrop-filter: blur(20px); /*para que el fondo sea borroso*/
-    box-shadow: 0 0 10px rgba(0, 0, 0, .2); /*sombra del formulario*/
+    backdrop-filter: blur(30px); /*para que el fondo sea borroso*/
+    box-shadow: 0 0 20px rgba(0, 0, 0, .5); /*sombra del formulario*/
     padding: 5rem;
 }
 
-.webp .background-image {
-    background-image: url(../img/playa.webp);
+/* .webp .background-image {
+    background-image: url(../img/playa1.webp);
 }
 .webp-no .background-image{
-    background-image: url(../img/playa.jpg);
-}
+    background-image: url(../img/playa1.jpg);
+} */
 .background-image {
     
     height: 100%;
@@ -122,14 +122,13 @@ input[type=number] {
 	border-color: var(--grisOscuro) /*una vez checkeado aplica el color al cuadro*/
 }
 .radio:checked + label:after {
-    content: ""; /*para que el visto se vea*/
-    border: .8rem solid var(--grisOscuro); /*grosor y color del borde (visto)*/
+    content: ""; /*para que la bolita se vea*/
+    border: .8rem solid var(--grisOscuro); /*grosor y color del borde*/
     border-radius: 50%;
-    width: 0; /*ancho del cuadro (visto)*/
-    height: 0; /*alto del cuadro (visto)*/
-    /*con esto se crea la forma de un visto*/
-    float: left; /*el visto se mantiene a la izquierda*/
-    margin: 1.7rem 0 0 -2.9rem; /*para que el visto este en el cuadro*/
+    width: 0; /*ancho de la bolita*/
+    height: 0; /*alto de la bolita*/
+    float: left; /*la bolita se mantiene a la izquierda*/
+    margin: 1.7rem 0 0 -2.9rem; /*para que la bolita este en el circulo*/
 }
 
 .radio {
@@ -147,7 +146,76 @@ input[type=number] {
     color: var(--grisOscuro) /*se aplica el color al texto una vez checkeado*/
 }
 
-
+/*Tipo de viajero*/
+.selectbox {
+    width: 50%;
+    margin: 0 auto;
+    position: relative; /*contenedor padre*/
+}
+.select {
+    width: 30rem;
+    height: 10rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: .2s ease all;
+    box-shadow: 0 0 0 rgba(0, 0, 0, .16);
+    position: relative;
+    z-index: 200;
+    border: .2rem solid transparent;
+    padding: 1rem;
+}
+.select.active,
+.select:hover {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .16);
+    border: .2rem solid var(--negro);
+}
+.select.active:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 15px solid var(--negro);
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 15px solid transparent;
+    position: absolute;
+    bottom: -3rem;
+    left: calc(50% - 15px);
+}
+.select-contenido {
+    margin: 1rem auto;
+}
+.select-contenido__titulo {
+    font-size: 2rem;
+}
+.select-opciones {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .16);
+    max-height: 20rem;
+    overflow: auto;
+    z-index: 100;
+    width: 30rem;
+    display: none;
+}
+.select-opciones.active {
+    display: block;
+}
+.select-opcion {
+    text-decoration: none;
+}
+/*animación a opciones*/
+.select-opcion__contenido {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .2s ease all;
+}
+.select-opcion__contenido:hover {
+    background: #213f8f;
+}
 
 /*viajar continentes*/
 .checkbox__botones {
