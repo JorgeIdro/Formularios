@@ -201,6 +201,7 @@ input[type=number] {
     font-size: 2rem;
     color: var(--negro);
 }
+/*opciones*/
 .select-opciones {
     box-shadow: 0 5px 10px rgba(0, 0, 0, .16);
     max-height: 20rem;
